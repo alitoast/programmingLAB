@@ -1,5 +1,4 @@
 class ExamException(Exception): 
-    ##inherits from the build-in Exceptions
     pass
 
 class CSVTimeSeriesFile: 
@@ -11,11 +10,11 @@ class CSVTimeSeriesFile:
         #read and parse the given file
         with open(self.name, 'r') as csv_file:
             lines = csv_file.readlines() #rea all as strings
-            self.data = [] #so I reset the data every time I call get_data
+            self.data = [] #so I reset the timeseries every time I call get_data
             prev_month = 0
             prev_year = 0
             for line in lines[1:]:
-                #split dates and passengers number
+                #split dates and number of passengers
                 if len(line.strip().split(',')) >= 2:
                     date_string = line.strip().split(',')[0]
                     passengers_string = line.strip().split(',')[1]
@@ -75,5 +74,5 @@ def detect_similar_monthly_variations(time_series, years):
 
     return variation
 
-print(detect_similar_monthly_variations(time_series_file.get_data(), [1956,1957]))
-print(time_series_file.get_data())
+print(detect_similar_monthly_variations(time_series_file.get_data(), [year,year+1]))
+
