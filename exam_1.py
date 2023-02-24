@@ -1,5 +1,4 @@
 class ExamException(Exception): 
-    ##inherits from the build-in Exceptions
     pass
 
 class CSVTimeSeriesFile: 
