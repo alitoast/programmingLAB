@@ -74,5 +74,5 @@ def detect_similar_monthly_variations(time_series, years):
 
     return variation
 
-print(detect_similar_monthly_variations(time_series_file.get_data(), [year,year+1]))
+print(detect_similar_monthly_variations(time_series_file.get_data(), [1949,1950]))
 
