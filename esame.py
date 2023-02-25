@@ -41,7 +41,6 @@ class CSVTimeSeriesFile:
 
         return self.data
 
-time_series_file=CSVTimeSeriesFile(name='data.csv')
 
 def detect_similar_monthly_variation(time_series, years):
     year_1 = [None] * 12
@@ -80,5 +79,3 @@ def detect_similar_monthly_variation(time_series, years):
             variation.append(False)
     
     return variation
-
-print(detect_similar_monthly_variation(time_series_file.get_data(), [1949,1950]))
